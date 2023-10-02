@@ -14,15 +14,11 @@ async def shutdown(dp):
     await storage.close()
     await bot.close()
 
-async def on_startup(dp:Dispatcher):
-    print("Bot on")
-
 #Запуск бота
 if __name__ == '__main__':
     print("Бот запустился")
     from handlers import *
     create_dbx() #Проверяем есть ли БД или создаем ее
     setup_middlewares(dp) #Подключаем мидлвар, чтобы не падал бот
-                    #on_startup=send_hello,
     executor.start_polling(dp,  on_shutdown=shutdown)
 

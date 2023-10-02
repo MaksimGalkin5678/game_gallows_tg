@@ -124,15 +124,12 @@ async def main_start(message: Message, state: FSMContext):
                          "/start", reply_markup=menu_frep(message.from_user.id))
 
 
-# async def send_hello(dp):
-#    await bot.send_message(chat_id=chat_id,text='Бот включен')
-
 #Вывод правил
 @dp.message_handler(text="📜 Правила", state="*")
 async def new_game (message: Message, state: FSMContext):
     await state.finish()
     await message.answer("Виселица, как на бумаге, только онлайн. Загадывается слово, и Вы буква за буквой пытаетесь его угадать. На это дается 7 попыток.\n"
-                         "▶Критерии оценивания:\n"
+                         "Критерии оценивания:\n"
                          "🏆Победа +5 очков\n"
                          "🔥Слово соcтоящие из 10+букв +5 очков\n"
                          "❌Проигрыш -3 очка\n"
