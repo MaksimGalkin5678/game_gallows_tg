@@ -111,10 +111,9 @@ def menu_frep(user_id):
     keyboard = ReplyKeyboardMarkup(resize_keyboard=True)
     keyboard.row("📜 Правила", "👻 Профиль", "🔝 Рейтинг")
     keyboard.row("🕹 Новая игра")
-    if user_id in get_admins(): #кнопка админа
+    if user_id in get_admins(): #проверка и вывод кнопки админа
         keyboard.row("📦БД")
     return keyboard
-
 
 #Стартовое сообщение
 @dp.message_handler(text=['игра', '/start','играть','виселица','/game'], state="*")
@@ -122,7 +121,6 @@ async def main_start(message: Message, state: FSMContext):
     await state.finish()
     await message.answer("✅ Бот готов к использованию.\n"
                          "/start", reply_markup=menu_frep(message.from_user.id))
-
 
 #Вывод правил
 @dp.message_handler(text="📜 Правила", state="*")
@@ -132,7 +130,7 @@ async def new_game (message: Message, state: FSMContext):
                          "Критерии оценивания:\n"
                          "🏆Победа +5 очков\n"
                          "🔥Слово соcтоящие из 10+букв +5 очков\n"
-                         "❌Проигрыш -3 очка\n"
+                         "❌Проигрыш -3 очка\n"Ы
                          "❓Взятие подсказки -2 очка ")
 
 # Получение БД из админ панели в виде файла
@@ -141,7 +139,6 @@ async def admin_database(message: Message, state: FSMContext):
     await state.finish()
     with open(PATH_DATABASE, "rb") as document:
         await message.answer_document(document, caption=f"<b>📦 BACKUP\n" f"🕰 <code>{get_date()}</code></b>")
-
 
 #Вывод профиля
 @dp.message_handler(text="👻 Профиль", state="*")
@@ -191,7 +188,7 @@ async def cmd_numbers(message: types.Message):
         wrong=get_user['user_wrong']
         await message.answer(f"Отгадайте слово: {get_user['user_dlina']}\n Вы использовали следующие буквы: {used}\n {HANGMAN[wrong]}\n 🔸{get_user['user_used']} ", reply_markup=get_keyboard())
 
-
+#Вывод кнопок клавиатуры
 def get_keyboard():
     buttons = [
         types.InlineKeyboardButton(text="А", callback_data="num_1"),
@@ -240,7 +237,7 @@ async def update_num_text(message: types.Message, used: str ,wrong:int,so_far : 
         get_user = get_userx(user_id=message.from_user.id)
         await message.answer(f"Отгадайте слово: {so_far}\n Вы использовали следующие буквы: {used}\n {HANGMAN[wrong]}\n {user_used}🔸", reply_markup=get_keyboard())
 
-#обработка кнопки действия
+#########################################     ОБРАБОТКА КНОПОК БУКВ и ПОДСКАЗКИ      ###########################################################
 @dp.callback_query_handler(text="num_1")
 async def send_bykva_A(callback: types.CallbackQuery):
     get_user = get_userx(user_id=callback.from_user.id)
