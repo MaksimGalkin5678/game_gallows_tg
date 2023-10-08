@@ -5,7 +5,7 @@ from aiogram.types import Message, CallbackQuery, ContentType
 from aiogram.dispatcher.filters import Text, Command, BoundFilter
 from aiogram.types import ReplyKeyboardMarkup
 from aiogram.utils.exceptions import MessageNotModified, CantParseEntities
-from LittlebitWords import rand
+from Words import rand
 from config import get_admins, PATH_DATABASE
 from main import bot, dp, chat_id
 from aiogram.dispatcher import  FSMContext
