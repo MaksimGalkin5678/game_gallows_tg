@@ -1545,7 +1545,7 @@ async def send_bykva_A(callback: types.CallbackQuery):
     while bykva_A in used:
         pass
     if bykva_A in slov:
-        for i in range(len(slov)):  # В цикле добавляем найденную букву в нужное место
+        for i in range(len(slov)):  #В цикле добавляем найденную букву в нужное место
             if bykva_A == slov[i]:
                 new += bykva_A
             else:
