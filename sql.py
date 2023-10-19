@@ -10,8 +10,7 @@ def clear_html(get_text):
         if ">" in get_text: get_text = get_text.replace(">", "*")
     return get_text
 
-
-# Получение текущей даты
+#Получение текущей даты
 def get_date():
     this_date = datetime.today().replace(microsecond=0)
     this_date = this_date.strftime("%d.%m.%Y %H:%M:%S")
@@ -24,7 +23,7 @@ def dict_factory(cursor, row):
         save_dict[col[0]] = row[idx]
     return save_dict
 
-# Форматирование запроса в БД без аргументов
+#Форматирование запроса в БД без аргументов
 def update_format(sql, parameters: dict):
     if "XXX" not in sql: sql += " XXX "
     values = ", ".join([
@@ -34,7 +33,7 @@ def update_format(sql, parameters: dict):
     return sql, list(parameters.values())
 
 
-# Форматирование запроса в БД с аргументами
+#Форматирование запроса в БД с аргументами
 def update_format_args(sql, parameters: dict):
     sql = f"{sql} WHERE "
     sql += " AND ".join([
@@ -43,7 +42,7 @@ def update_format_args(sql, parameters: dict):
     return sql, list(parameters.values())
 
 ########################################### ЗАПРОСЫ К БД ###########################################
-# Добавление пользователя
+#Добавление пользователя
 def add_userx(user_id, user_login, user_name):
     with sqlite3.connect(PATH_DATABASE) as con:
         con.row_factory = dict_factory
@@ -53,7 +52,7 @@ def add_userx(user_id, user_login, user_name):
                     [user_id, user_login, user_name, 0, 0, 0, None, None, 0,"➖"," ",get_date()])
         con.commit()
 
-# Получение пользователя
+#Получение пользователя
 def get_userx(**kwargs):
     with sqlite3.connect(PATH_DATABASE) as con:
         con.row_factory = dict_factory
@@ -61,7 +60,7 @@ def get_userx(**kwargs):
         sql, parameters = update_format_args(sql, kwargs)
         return con.execute(sql, parameters).fetchone()
 
-# Редактирование пользователя
+#Редактирование пользователя
 def update_userx(user_id, **kwargs):
     with sqlite3.connect(PATH_DATABASE) as con:
         con.row_factory = dict_factory
@@ -71,7 +70,7 @@ def update_userx(user_id, **kwargs):
         con.execute(sql + "WHERE user_id = ?", parameters)
         con.commit()
 
-# Изменение слова
+#Изменение слова
 def update_slovox(user_id, **kwargs):
     with sqlite3.connect(PATH_DATABASE) as con:
         con.row_factory = dict_factory
@@ -81,11 +80,11 @@ def update_slovox(user_id, **kwargs):
         con.execute(sql + "WHERE user_id = ?", parameters)
         con.commit()
 
-# Создание всех таблиц для БД
+#Создание всех таблиц для БД
 def create_dbx():
     with sqlite3.connect(PATH_DATABASE) as con:
         con.row_factory = dict_factory
-        # Создание БД с хранением данных пользователей
+        #Создание БД с хранением данных пользователей
         if len(con.execute("PRAGMA table_info(storage_users)").fetchall()) == 13:
             print("Таблица юзеров найдена")
         else:

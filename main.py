@@ -14,7 +14,7 @@ async def shutdown(dp):
     await storage.close()
     await bot.close()
 
-# Запуск бота
+#Запуск бота
 if __name__ == '__main__':
     print("Бот запустился")
     from handlers import *
