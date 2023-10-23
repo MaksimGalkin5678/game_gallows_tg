@@ -1,6 +1,4 @@
-from config import get_admins
 from sql import *
-from main import bot
 
 #Удаление отступов у текста (когда бот отправляет сообщение)
 def ded(get_text: str):

@@ -1,9 +1,5 @@
 import random
-#https://web-crazy.ru/zakavychnik/
-#https://toolber.ru/random-word-generator
-#https://ozhegov.slovaronline.com/
-#https://allcalc.ru/node/1979
-from random import choice
+
 def rand():
     words = {"компания":"Общество, группа лиц, проводящих вместе время",
              "армия":" Вооружённые силы государства",

@@ -1,6 +1,5 @@
 import sqlite3
 from datetime import datetime
-import time
 from config import PATH_DATABASE
 
 #очищаем текст от HTMl тэгов для корректного отображения пользователя в БД

@@ -1,13 +1,12 @@
-import asyncio
 from contextlib import suppress
 from aiogram import types
-from aiogram.types import Message, CallbackQuery, ContentType
-from aiogram.dispatcher.filters import Text, Command, BoundFilter
+from aiogram.types import Message
+from aiogram.dispatcher.filters import BoundFilter
 from aiogram.types import ReplyKeyboardMarkup
-from aiogram.utils.exceptions import MessageNotModified, CantParseEntities
+from aiogram.utils.exceptions import MessageNotModified
 from Words import rand
 from config import get_admins, PATH_DATABASE
-from main import bot, dp, chat_id
+from main import dp
 from aiogram.dispatcher import  FSMContext
 from profile_funct import open_profile_user
 from sql import *
