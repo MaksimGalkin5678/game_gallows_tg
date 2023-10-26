@@ -1,4 +1,4 @@
-from contextlib import suppress
+from contextlib import suppress 
 from aiogram import types
 from aiogram.types import Message
 from aiogram.dispatcher.filters import BoundFilter

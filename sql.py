@@ -9,7 +9,7 @@ def clear_html(get_text):
         if ">" in get_text: get_text = get_text.replace(">", "*")
     return get_text
 
-#Получение текущей даты
+#Получение текущей даты 
 def get_date():
     this_date = datetime.today().replace(microsecond=0)
     this_date = this_date.strftime("%d.%m.%Y %H:%M:%S")
