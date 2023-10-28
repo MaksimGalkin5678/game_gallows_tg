@@ -6,7 +6,7 @@ from config import get_admins
 from sql import get_userx, add_userx, update_userx
 from sql import clear_html
 
-#Проверка юзеров в БД и его добавление
+#Проверка юзеров в БД и его добавление 
 class ExistsUserMiddleware(BaseMiddleware):
     def __init__(self):
         self.prefix = "key_prefix"

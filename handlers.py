@@ -12,7 +12,7 @@ from profile_funct import open_profile_user
 from sql import *
 
 
-global loose
+global loose 
 global win
 global podz
 podz = -2
