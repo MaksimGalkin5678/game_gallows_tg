@@ -17,7 +17,7 @@ global win
 global podz
 podz = -2
 win = 5
-loose = -3
+loose = -3 
 HANGMAN = (
     """
      ------

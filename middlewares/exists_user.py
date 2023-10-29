@@ -1,4 +1,3 @@
-# - *- coding: utf- 8 - *-
 from aiogram.dispatcher.middlewares import BaseMiddleware
 from aiogram.types import Update
 

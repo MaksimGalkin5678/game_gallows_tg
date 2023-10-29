@@ -6,7 +6,7 @@ from middlewares import setup_middlewares
 from sql import create_dbx
 
 loop = asyncio.new_event_loop()
-bot = Bot(token,parse_mode="HTML")
+bot = Bot(token,parse_mode="HTML") 
 storage = MemoryStorage()
 dp = Dispatcher(bot,loop=loop,storage=storage)
 

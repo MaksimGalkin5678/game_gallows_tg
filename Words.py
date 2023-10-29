@@ -1,4 +1,4 @@
-import random
+import random 
 
 def rand():
     words = {"компания":"Общество, группа лиц, проводящих вместе время",
