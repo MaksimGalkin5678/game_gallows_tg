@@ -14,7 +14,7 @@ def ded(get_text: str):
         get_text = "\n".join(save_text)
     return get_text
 
-#Открытие своего профиля 
+#Открытие своего профиля  
 def open_profile_user(user_id):
     get_user = get_userx(user_id=user_id)
     return ded(f"""

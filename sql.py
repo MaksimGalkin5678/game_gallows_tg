@@ -2,7 +2,7 @@ import sqlite3
 from datetime import datetime
 from config import PATH_DATABASE
 
-#очищаем текст от HTMl тэгов для корректного отображения пользователя в БД
+#очищаем текст от HTMl тэгов для корректного отображения пользователя в БД  
 def clear_html(get_text):
     if get_text is not None:
         if "<" in get_text: get_text = get_text.replace("<", "*")
