@@ -11,7 +11,6 @@ from aiogram.dispatcher import  FSMContext
 from profile_funct import open_profile_user
 from sql import *
 
-
 global loose 
 global win
 global podz

@@ -22,3 +22,4 @@ if __name__ == '__main__':
     setup_middlewares(dp) #Подключаем мидлвар, чтобы не падал бот
     executor.start_polling(dp,  on_shutdown=shutdown)
 
+ 
