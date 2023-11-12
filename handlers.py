@@ -9,7 +9,7 @@ from config import get_admins, PATH_DATABASE
 from main import dp
 from aiogram.dispatcher import  FSMContext
 from profile_funct import open_profile_user
-from sql import *
+from sql import * 
 
 global loose 
 global win
